@@ -70,8 +70,11 @@ greetings:-
     prompt(_,'Age : '),read(Ag),
     prompt(_,'Sex : '),read(Sx),
     print_message(Nm,Ag,Sx).
-print_message(_Nm, Ag, Sex):-
-    Year100 is 2119-Ag,
+%print_message(_Nm, Ag, Sex):-
+%Year100 is 2119-Ag,
+    print_message(Nm, Age, Sex):-
+
+    Year100 is 2119-Age,
     /*
     write('Hello '),
     write(Nm), write(' '),
@@ -88,5 +91,8 @@ print_message(Nm, Ag):-
     % writeln(Year100).
     */
     (   Sex=female-> G1='Girl'; G1='Boy'),
+    (   Age >100 ->W='were'; W='will be'),
 /*format('~s ~s ~d ~n', [Nm, 'You will be 100 in Year', Year100]).*/
-    format('Hello ~s, You will be 100 in the Year ~d ~n', [G1, Year100]).
+    /*format('Hello ~s, You will be 100 in the Year ~d ~n', [G1, Year100]).*/
+    format('Hello ~s,You are a ~s, and you ~s 100 in Year ~d ~n', [Nm, G1,W, Year100]).
+
