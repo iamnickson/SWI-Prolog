@@ -557,5 +557,39 @@ P = [a, b, f] .
 
 [trace]  ?- 
 |    
-|    
+|    dfs([a],e,P).
+   Call: (8) dfs([a], e, _670) ? creep
+^  Call: (9) not(equal(a, e)) ? creep
+   Call: (10) equal(a, e) ? creep
+   Fail: (10) equal(a, e) ? creep
+^  Exit: (9) not(user:equal(a, e)) ? creep
+   Call: (9) arc(a, _910) ? creep
+   Exit: (9) arc(a, b) ? creep
+^  Call: (9) not(member(b, [])) ? creep
+^  Exit: (9) not(user:member(b, [])) ? creep
+   Call: (9) dfs([b, a], e, _670) ? creep
+^  Call: (10) not(equal(b, e)) ? creep
+   Call: (11) equal(b, e) ? creep
+   Fail: (11) equal(b, e) ? creep
+^  Exit: (10) not(user:equal(b, e)) ? creep
+   Call: (10) arc(b, _946) ? creep
+   Exit: (10) arc(b, e) ? creep
+^  Call: (10) not(member(e, [a])) ? creep
+^  Exit: (10) not(user:member(e, [a])) ? creep
+   Call: (10) dfs([e, b, a], e, _670) ? creep
+   Call: (11) lists:reverse([e, b, a], _670) ? creep
+   Exit: (11) lists:reverse([e, b, a], [a, b, e]) ? creep
+   Exit: (10) dfs([e, b, a], e, [a, b, e]) ? creep
+   Exit: (9) dfs([b, a], e, [a, b, e]) ? creep
+   Exit: (8) dfs([a], e, [a, b, e]) ? creep
+P = [a, b, e] .
+
+[trace]  ?- dfs([a],a,P).
+   Call: (8) dfs([a], a, _670) ? creep
+   Call: (9) lists:reverse([a], _670) ? creep
+   Exit: (9) lists:reverse([a], [a]) ? creep
+   Exit: (8) dfs([a], a, [a]) ? creep
+P = [a] .
+
+[trace]  ?- 
 
