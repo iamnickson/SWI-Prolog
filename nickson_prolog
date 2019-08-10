@@ -1,0 +1,561 @@
+cscsuer@cscstaff-HP-ProDesk-600-G1-TWR:~$ swipl
+Welcome to SWI-Prolog (threaded, 64 bits, version 7.7.19)
+SWI-Prolog comes with ABSOLUTELY NO WARRANTY. This is free software.
+Please run ?- license. for legal details.
+
+For online help and background, visit http://www.swi-prolog.org
+For built-in help, use ?- help(Topic). or ?- apropos(Word).
+
+?- edit(file('nickson.pl')).
+true.
+
+?- % /home/cscsuer/nickson compiled 0.00 sec, -1 clauses
+?- write_list([]).
+true.
+
+?- write_list([alpha, 1, beta, 2]).
+alpha,1,beta,2
+true .
+
+?- write_list_rev([1, 2, 3]).
+3>2>1
+true.
+
+?- write_listrev([1]).
+Correct to: "write_list_rev([1])"? 
+Please answer 'y' or 'n'? no
+ERROR: Undefined procedure: write_listrev/1
+ERROR:   However, there are definitions for:
+ERROR:         write_list_rev/1
+ERROR: 
+ERROR: In:
+ERROR:    [8] write_listrev([1])
+ERROR:    [7] <user>
+   Exception: (8) write_listrev([1]) ? creep
+?- write_list_rev([1]).
+1
+true.
+
+?- write_list_rev([]).
+true.
+
+?- reverse([3, 2 ,1],LR).
+LR = [1, 2, 3].
+
+?- Warning: /home/cscsuer/nickson.pl:58:
+	Singleton variables: [Nm]
+Warning: /home/cscsuer/nickson.pl:60:
+	Singleton variables: [Nm]
+ERROR: /home/cscsuer/nickson.pl:60:
+	No permission to modify static procedure `read/1'
+% /home/cscsuer/nickson compiled 0.01 sec, 2 clauses
+% /home/cscsuer/nickson compiled 0.00 sec, -1 clauses
+?- get_name(name).
+Your Name: Nickson.
+
+true.
+
+?- get_name(name), writeln(name).
+Your Name: Nickson.
+name
+true.
+
+?- % /home/cscsuer/nickson compiled 0.00 sec, 0 clauses
+?- get_name(name), writeln(name).
+Your Name: Nickson.
+name
+true.
+
+?- get_name(Name), writeln(Name).
+Your Name: Nickon
+Your Name: Nickson.
+
+ERROR: Stream user_input:68:7 Syntax error: Operator expected
+?- get_name(Name), writeln(Name).
+Your Name: Nickson.
+_2716
+true.
+
+?- % /home/cscsuer/nickson compiled 0.00 sec, 0 clauses
+?- get_name(Name).
+Your Name: Nickson.
+
+true.
+
+?- get_name(Name), writeln(Name).
+Your Name: Nickson.
+_3048
+true.
+
+?- get_name(Name), writeln(Name).
+Your Name: Nickson.
+_2716
+true.
+
+?- get_name(Name), writeln(Name).
+Your Name: ji.
+ji
+Name = ji.
+
+?- Warning: /home/cscsuer/nickson.pl:68:
+	Clauses of get_name/1 are not together in the source-file
+	  Earlier definition at /home/cscsuer/nickson.pl:58
+	  Current predicate: get_input/1
+	  Use :- discontiguous get_name/1. to suppress this message
+% /home/cscsuer/nickson compiled 0.01 sec, 4 clauses
+% /home/cscsuer/nickson compiled 0.01 sec, -1 clauses
+?- greetings.
+Name : Nickson.
+Age : 24.
+Hello _293 You will be 100 in Year 2095
+true.
+
+?- % /home/cscsuer/nickson compiled 0.00 sec, 0 clauses
+?- greetings.
+Name : Hi
+Name : hi.
+
+ERROR: Stream user_input:113:3 Syntax error: Operator expected
+?- greetings.
+Name : hi.
+Age : 10.
+Hello hi You will be 100 in Year 90
+true.
+
+?- % /home/cscsuer/nickson compiled 0.00 sec, 0 clauses
+?- greetings.
+Name : ji.
+Age : 15.
+Hello ji You will be 100 in Year 2104
+true.
+
+?- greetings.
+Name : Ji.
+Age : 10.
+Hello _293 You will be 100 in Year 2109
+true.
+
+?- % /home/cscsuer/nickson compiled 0.00 sec, 0 clauses
+Warning: /home/cscsuer/nickson.pl:68:
+	Singleton variables: [Gender]
+Warning: /home/cscsuer/nickson.pl:79:
+	Singleton variables: [Gender]
+% /home/cscsuer/nickson compiled 0.00 sec, 0 clauses
+Warning: /home/cscsuer/nickson.pl:68:
+	Singleton variables: [Sex]
+Warning: /home/cscsuer/nickson.pl:79:
+	Singleton variables: [Sex]
+% /home/cscsuer/nickson compiled 0.00 sec, 0 clauses
+Warning: /home/cscsuer/nickson.pl:68:
+	Singleton variables: [Se]
+Warning: /home/cscsuer/nickson.pl:79:
+	Singleton variables: [Se]
+% /home/cscsuer/nickson compiled 0.01 sec, 0 clauses
+% /home/cscsuer/nickson compiled 0.00 sec, 0 clauses
+?- greetings.
+Name : ji.
+Age : 25.
+Gender : Girl.
+Hello ji genderYou will be 100 in Year 2094
+true.
+
+?- ERROR: [Thread pce] /home/cscsuer/nickson.pl:75:64: Syntax error: Operator expected
+% /home/cscsuer/nickson compiled 0.01 sec, -1 clauses
+Warning: /home/cscsuer/nickson.pl:73:
+	Singleton variables: [Nm,Name]
+% /home/cscsuer/nickson compiled 0.01 sec, 1 clauses
+% /home/cscsuer/nickson compiled 0.00 sec, 0 clauses
+?- greetings.
+Name : ji.\
+Name : ji.
+
+ERROR: Stream user_input:167:2 Syntax error: Operator expected
+?- greetings.
+Name : jhi.
+Age : .
+
+ERROR: Stream user_input:173:1 Syntax error: Unexpected end of clause
+?- greetings.
+Name : ji.
+Age : 25.
+Gender : male.
+
+false.
+
+?- Warning: /home/cscsuer/nickson.pl:68:
+	Singleton variables: [Sx]
+Warning: /home/cscsuer/nickson.pl:73:
+	Singleton variables: [Sex]
+% /home/cscsuer/nickson compiled 0.00 sec, 0 clauses
+Warning: /home/cscsuer/nickson.pl:73:
+	Singleton variables: [Sex]
+% /home/cscsuer/nickson compiled 0.00 sec, 0 clauses
+?- greetings.
+Name : ji.
+Age : 25.
+Gender : male.
+ji You will be 100 in Year 2094 
+true.
+
+?- Warning: /home/cscsuer/nickson.pl:73:
+	Singleton variables: [Sex,Sx]
+% /home/cscsuer/nickson compiled 0.00 sec, 0 clauses
+Warning: /home/cscsuer/nickson.pl:73:
+	Singleton variables: [Nm]
+% /home/cscsuer/nickson compiled 0.01 sec, 0 clauses
+Warning: /home/cscsuer/nickson.pl:73:
+	Singleton variables: [Nm]
+% /home/cscsuer/nickson compiled 0.01 sec, 0 clauses
+% /home/cscsuer/nickson compiled 0.01 sec, 0 clauses
+?- greetings.
+Name : ji.
+Age : 25.
+Sex : male.
+Hello Boy, You will be 100 in the Year2094 
+true.
+
+?- % /home/cscsuer/nickson compiled 0.00 sec, 0 clauses
+?- greetings.
+Name : ji.
+Age : 25.
+Sex : male.
+Hello Boy, You will be 100 in the Year 2094 
+true.
+
+?- greetings.
+Name : 'Ji'.
+Age : 20.
+Sex : male.
+Hello Boy, You will be 100 in the Year 2099 
+true.
+
+?- Warning: /home/cscsuer/nickson.pl:73:
+	Singleton variables: [Age,Nm]
+Warning: /home/cscsuer/nickson.pl:73:
+	Singleton variable in branch: Age
+% /home/cscsuer/nickson compiled 0.01 sec, 0 clauses
+Warning: /home/cscsuer/nickson.pl:74:
+	Singleton variables: [Age]
+Warning: /home/cscsuer/nickson.pl:74:
+	Singleton variable in branch: Age
+% /home/cscsuer/nickson compiled 0.01 sec, 0 clauses
+Warning: /home/cscsuer/nickson.pl:74:
+	Singleton variables: [Ag]
+% /home/cscsuer/nickson compiled 0.01 sec, 0 clauses
+% /home/cscsuer/nickson compiled 0.00 sec, 0 clauses
+?- greetings.
+Name : ji.
+Age : 250.
+Sex : male.
+Hello ji,You are a Boy, and you were 100 in Year 1869 
+true.
+
+?- edit(file('nickson_depth_first_search.pl')).
+true.
+
+?- edit(file('nick_depth_first_search.pl')).
+true.
+
+?- Warning: /home/cscsuer/nick_depth_first_search.pl:12:
+	Singleton variables: [Psfar]
+% /home/cscsuer/nick_depth_first_search compiled 0.00 sec, 0 clauses
+?- dfs([a], l,p).
+ERROR: Undefined procedure: equal/2
+ERROR: In:
+ERROR:   [10] equal(a,l)
+ERROR:    [9] not(user:equal(a,l)) at /usr/lib/swi-prolog/boot/init.pl:332
+ERROR:    [8] dfs([a],l,p) at /home/cscsuer/nick_depth_first_search.pl:13
+ERROR:    [7] <user>
+   Exception: (10) equal(a, l) ? 
+% /home/cscsuer/nick_depth_first_search compiled 0.00 sec, 0 clauses
+depth
+   Exception: (10) ... ? fail
+?- 
+|    dfs.
+ERROR: Undefined procedure: dfs/0
+ERROR:     However, there are definitions for:
+ERROR:         dfs/3
+false.
+
+?- dfs([a],l,P).
+ERROR: Undefined procedure: equal/2
+ERROR: In:
+ERROR:   [10] equal(a,l)
+ERROR:    [9] not(user:equal(a,l)) at /usr/lib/swi-prolog/boot/init.pl:332
+ERROR:    [8] dfs([a],l,_7468) at /home/cscsuer/nick_depth_first_search.pl:13
+ERROR:    [7] <user>
+   Exception: (10) ... ? 
+% /home/cscsuer/nick_depth_first_search compiled 0.00 sec, 1 clauses
+Unknown option (h for help)
+   Exception: (10) ... ? Unknown option (h for help)
+   Exception: (10) ... ? alternatives
+  [9] ...
+   Exception: (10) ... ? Unknown option (h for help)
+   Exception: (10) ... ? Unknown option (h for help)
+   Exception: (10) ... ? alternatives
+  [9] ...
+   Exception: (10) ... ? No previous search
+   Exception: (10) ... ? creep
+?- dfs([a],l,P).
+P = [a, c, g, l] .
+
+?- dfs([a],z,Z).
+false.
+
+?- dfs([a],z,P).
+false.
+
+?- dfs([a],j,P).
+P = [a, d, i, j] .
+
+?- dfs([a],i,P).
+P = [a, d, i] .
+
+?- dfs([a],z,P).
+false.
+
+?- dfs([a],q,P).
+P = [a, d, i, j, q] .
+
+?- trace.
+true.
+
+[trace]  ?- dfs([a],q,P).
+   Call: (8) ... ? creep
+^  Call: (9) ... ? creep
+   Call: (10) ... ? creep
+   Fail: (10) ... ? creep
+^  Exit: (9) ... ? creep
+   Call: (9) ... ? creep
+   Exit: (9) ... ? No previous search
+   Exit: (9) ... ? creep
+^  Call: (9) ... ? No previous search
+^  Call: (9) ... ? creep
+^  Exit: (9) ... ? No previous search
+^  Exit: (9) ... ? No previous search
+^  Exit: (9) ... ? No previous search
+^  Exit: (9) ... ? No previous search
+^  Exit: (9) ... ? No previous search
+^  Exit: (9) ... ? No previous search
+^  Exit: (9) ... ? No previous search
+^  Exit: (9) ... ? No previous search
+^  Exit: (9) ... ? No previous search
+^  Exit: (9) ... ? No previous search
+^  Exit: (9) ... ? No previous search
+^  Exit: (9) ... ? No previous search
+^  Exit: (9) ... ? Unknown option (h for help)
+^  Exit: (9) ... ? Unknown option (h for help)
+^  Exit: (9) ... ? alternatives
+  [9] ...
+^  Exit: (9) ... ? No previous search
+^  Exit: (9) ... ? creep
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? alternatives
+  [9] ...
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? alternatives
+  [9] ...
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? No previous search
+   Call: (9) ... ? No previous search
+   Call: (9) ... ? No previous search
+   Call: (9) ... ? No previous search
+   Call: (9) ... ? No previous search
+   Call: (9) ... ? No previous search
+   Call: (9) ... ? No previous search
+   Call: (9) ... ? No previous search
+   Call: (9) ... ? No previous search
+   Call: (9) ... ? No previous search
+   Call: (9) ... ? No previous search
+   Call: (9) ... ? No previous search
+   Call: (9) ... ? No previous search
+   Call: (9) ... ? No previous search
+   Call: (9) ... ? No previous search
+   Call: (9) ... ? 
+% /home/cscsuer/nick_depth_first_search compiled 0.00 sec, 0 clauses
+Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? alternatives
+  [9] ...
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? alternatives
+  [9] ...
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? Unknown option (h for help)
+   Call: (9) ... ? alternatives
+  [9] ...
+   Call: (9) ... ? 
+% /home/cscsuer/nick_depth_first_search compiled 0.00 sec, 0 clauses
+depth
+   Call: (9) ... ? fail
+   Redo: (9) ... ? skip
+   Exit: (9) ... ? exit (status 4)
+% The following threads wouldn't die: [pce]
+cscsuer@cscstaff-HP-ProDesk-600-G1-TWR:~$ swipl
+Welcome to SWI-Prolog (threaded, 64 bits, version 7.7.19)
+SWI-Prolog comes with ABSOLUTELY NO WARRANTY. This is free software.
+Please run ?- license. for legal details.
+
+For online help and background, visit http://www.swi-prolog.org
+For built-in help, use ?- help(Topic). or ?- apropos(Word).
+
+?- edit(file('nicks_depth_first_search.pl')).
+true.
+
+?- % /home/cscsuer/nicks_depth_first_search compiled 0.00 sec, -1 clauses
+?- dfs([a],f,P).
+P = [a, b, f] .
+
+?- trace.
+true.
+
+[trace]  ?- dfs([a],f,P).
+   Call: (8) dfs([a], f, _670) ? creep
+^  Call: (9) not(equal(a, f)) ? creep
+   Call: (10) equal(a, f) ? creep
+   Fail: (10) equal(a, f) ? creep
+^  Exit: (9) not(user:equal(a, f)) ? creep
+   Call: (9) arc(a, _908) ? creep
+   Exit: (9) arc(a, b) ? creep
+^  Call: (9) not(member(b, [])) ? creep
+^  Exit: (9) not(user:member(b, [])) ? creep
+   Call: (9) dfs([b, a], f, _670) ? creep
+^  Call: (10) not(equal(b, f)) ? creep
+   Call: (11) equal(b, f) ? creep
+   Fail: (11) equal(b, f) ? creep
+^  Exit: (10) not(user:equal(b, f)) ? creep
+   Call: (10) arc(b, _944) ? creep
+   Exit: (10) arc(b, e) ? creep
+^  Call: (10) not(member(e, [a])) ? creep
+^  Exit: (10) not(user:member(e, [a])) ? creep
+   Call: (10) dfs([e, b, a], f, _670) ? creep
+^  Call: (11) not(equal(e, f)) ? creep
+   Call: (12) equal(e, f) ? creep
+   Fail: (12) equal(e, f) ? creep
+^  Exit: (11) not(user:equal(e, f)) ? creep
+   Call: (11) arc(e, _980) ? creep
+   Fail: (11) arc(e, _980) ? creep
+   Fail: (10) dfs([e, b, a], f, _670) ? creep
+   Redo: (10) arc(b, _944) ? creep
+   Exit: (10) arc(b, f) ? creep
+^  Call: (10) not(member(f, [a])) ? creep
+^  Exit: (10) not(user:member(f, [a])) ? creep
+   Call: (10) dfs([f, b, a], f, _670) ? creep
+   Call: (11) lists:reverse([f, b, a], _670) ? creep
+   Exit: (11) lists:reverse([f, b, a], [a, b, f]) ? creep
+   Exit: (10) dfs([f, b, a], f, [a, b, f]) ? creep
+   Exit: (9) dfs([b, a], f, [a, b, f]) ? creep
+   Exit: (8) dfs([a], f, [a, b, f]) ? creep
+P = [a, b, f] .
+
+[trace]  ?- 
+|    
+|    
+
