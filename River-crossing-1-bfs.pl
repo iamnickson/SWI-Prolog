@@ -9,7 +9,10 @@ goal_state(s(e,e,e,e)).
 
 opp(e, w).
 opp(w, e).
+
+/*
 equal(X,X).
+*/
 
 unsafe(s(F, H, G, W)) :-
     opp(F, H),
@@ -42,6 +45,7 @@ move(s(S,H, G, S), s(S1, H, G, S1), A):-
     A='Farmer takes Wolf from'-S-to-S1.
 
 
+children(Cs, Nss):- bagof(Ns, A^move(Cs, Ns, A), Nss).
 
 bfs([Path|_Other_Paths], Gs, FP):-
     equal(Path, [Gs|_]),
@@ -73,8 +77,8 @@ extnd_pth([C|RLcs], Path, Paths,  Extndd_paths):-
     extnd_pth(RLcs, Path, Extended_paths_C, Extndd_paths).
 
 extnd_pth([],_,P, P).
-/*
-equal(_1, _1).*/
+
+equal(_1, _1).
 
 solve_by_bfs(Is, Gs, Path):-
     bfs([[Is]], Gs, Path).
@@ -96,3 +100,5 @@ write_actions([Act|T]):-
 
 write_actions([]). %What if it were not included?
 
+/*Try these
+ * solve_by_bfs(s(w,w,w,w),s(e,e,e,e),P).*/
