@@ -3,7 +3,7 @@ opp(w,e).
 opp(e,w).
 %state(F, G, H, W)
 % F represents the side of Farmer,
-% G represents Grain the side of Grai
+% G represents the side of Grain
 % H represents side of Hen
 % W represents side of Wolf
 % Initial State state(w, w, w, w) - All are on the west bank
@@ -83,7 +83,7 @@ writeActs([]).
 solve_RC1(FinalPath):-
     init(IS), goal(GS),
     find_path([IS], GS, FinalPath).
-
+/*solve_RC1x(P,A)*/
 solve_RC1x(FP, Actions):- init(IS), goal(GS),
     find_path_act([IS], GS, FP, [], Actions),
     writeActs(Actions).
